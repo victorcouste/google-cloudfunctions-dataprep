@@ -13,8 +13,8 @@ def dataprep_job_gcs_trigger(event, context):
     newfilename = head_tail[1]
     newfilepath = head_tail[0]
 
-    datataprep_auth_token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbklkIjoiMWQ3ZjNiZjYtYTNhYS00YWUyLTk4OGQtZDYzMWZmYmUzODBjIiwiaWF0IjoxNTg3OTAwNjc0LCJhdWQiOiJ0cmlmYWN0YSIsImlzcyI6ImRhdGFwcmVwLWFwaS1hY2Nlc3MtdG9rZW5AdHJpZmFjdGEtZ2Nsb3VkLXByb2QuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJkYXRhcHJlcC1hcGktYWNjZXNzLXRva2VuQHRyaWZhY3RhLWdjbG91ZC1wcm9kLmlhbS5nc2VydmljZWFjY291bnQuY29tIn0.YM2S2sx9RAdj4P_HSMjRjoYvS1qukKfZq53PVxqK05WG2AjHOteJTTEUrVoVhkLVrhIQ5zH6dFvukCzQA883AnVwsqKZW5NFkHDWpXP-b5308ytklDOcF_WgGA8QpIZDkl0EsJbEbn3Xr-40p6hunp5-KJkvi8XLocbSD_YgmEdo-JB0B8J5iBVvfVBQnr0LIHOvF55kXcv4zAeN6OyNmhti-SwsoCXqjFcjHwxgz8IXykaao7iW0eKDfiyDUhdRGsCL5VaSpBIKHbMgWEDZMZp7lykiEZlK3poC72_CjAlcOw-XJfA6oBG8vdEoZpBeXmVYkoMamiu9W5z8S-OCZw'
-    dataprep_jobid = 1393576
+    datataprep_auth_token = 'xxxxxxxxxxxxxxx'
+    dataprep_jobid = 99999999
 
     if context.event_type == 'google.storage.object.finalize' and newfilepath == 'landingzone':
 
