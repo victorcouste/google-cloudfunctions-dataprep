@@ -1,6 +1,6 @@
 # google-cloudfunctions-dataprep
 
-![Cloud Dataprep logo](CloudDataprep.png) ![Cloud Function logo](Google-Cloud-Functions.png)
+![image](CloudFunctions_Dataprep.png)
 
 Google Cloud Functions examples for Google Cloud Dataprep
 
