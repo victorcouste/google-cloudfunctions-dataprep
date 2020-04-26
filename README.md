@@ -2,7 +2,7 @@
 
 ![Trifacta logo](trifactalogo.png)    ![Cloud Dataprep logo](CloudDataprep.png)
 
-Google Cloud Functions examples for Google Dataprep
+Google Cloud Functions examples for Google Cloud Dataprep
 
 - **gcs_trigger_dataprep_job.py** : Background Python function to trigger a Dataprep job when a file is created in a Google Cloud storage bucket folder. Dataprep job started with REST API call and new file as parameter.
 
