@@ -1,6 +1,6 @@
 # google-cloudfunctions-dataprep
 
-![Trifacta logo](trifactalogo.png)
+![Trifacta logo](trifactalogo.png)    ![Cloud Dataprep logo](clouddataprep.png)
 
 Google Cloud Functions examples for Google Dataprep
 
