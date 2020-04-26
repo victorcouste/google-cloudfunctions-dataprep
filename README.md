@@ -4,8 +4,8 @@
 
 Google Cloud Functions examples for Google Dataprep
 
-- **gcs_trigger_dataprep_job.py** : Python function to trigger a Dataprep job when a file is created in a Google Cloud storage bucket folder. Dataprep job started with REST API call.
-- **job-result-google-sheet.js** : Node.js function to write in a Google Sheet a Dataprep job result. This HTTP Cloud function is called from a Datatprep Webhook when jobs are finished (success or failure).
+- **gcs_trigger_dataprep_job.py** : Background Python function to trigger a Dataprep job when a file is created in a Google Cloud storage bucket folder. Dataprep job started with REST API call.
+- **job-result-google-sheet.js** : HTTP Node.js function to write in a Google Sheet a Dataprep job result. This HTTP Cloud function is called from a Datatprep Webhook when jobs are finished (success or failure).
 
 Google Cloud Functions https://cloud.google.com/functions
 
