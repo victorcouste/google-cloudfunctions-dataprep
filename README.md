@@ -16,3 +16,5 @@ Google Cloud Functions https://cloud.google.com/functions
 Google Cloud Dataprep by Trifacta https://cloud.google.com/dataprep
 
 Google Cloud Dataprep API https://cloud.google.com/dataprep/docs/html/API-Overview_145281442
+
+All Trifacta API https://api.trifacta.com/
