@@ -1,5 +1,5 @@
 const {google} = require('googleapis');
-const request = require('request');
+const request = require('sync-request');
 
 exports.jobresultgsheet = async (req, res) => {
 
@@ -8,41 +8,56 @@ exports.jobresultgsheet = async (req, res) => {
   
   var jobURL = "https://clouddataprep.com/jobs/"+jobID;
   
-  var jobProfileFormula = '=LIEN_HYPERTEXTE("https://clouddataprep.com/v4/jobGroups/'+jobID+'/pdfResults";"Profile PDF")';
+  var jobProfileForumula = '=LIEN_HYPERTEXTE("https://clouddataprep.com/v4/jobGroups/'+jobID+'/pdfResults";"Profile PDF")';
+   
+  var DataprepToken = "eyJhbGciOiJSUzI.................7VQLSPH3mteFmQfOPBCrJPqGWErQ";
   
-  var jobEndpoint = "https://clouddataprep.com/v4/jobGroups/"+jobID;
-  
-  var DataprepToken = "vl67kXw.........fhtertgerjg567VB";
-  
-  var options = {
-    url: jobendpoint,
-    method: 'GET',
+  // ------------------ GET DATAPREP JOB OBJECT --------------------------------
+
+  var job_endpoint = "https://api.clouddataprep.com/v4/jobGroups/"+jobID+"?embed=wrangledDataset";
+
+  var res_job = request('GET', job_endpoint, {
     headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer '+ DataprepToken
-  }};
-    
-  request(options, function(err, res, body) {
-    let json = JSON.parse(body);
-    console.log(json);
+    },
   });
+  var jsonjob = JSON.parse(res_job.getBody());
+  var recipeID = jsonjob.wrangledDataset.id;
+  console.log("Recipe ID : "+recipeID);
+
+  // ------------------ GET DATAPREP RECIPE OBJECT --------------------------------
+
+  var recipe_endpoint = "https://api.clouddataprep.com/v4/wrangledDatasets/"+recipeID;
+
+  var res_recipe = request('GET', recipe_endpoint, {
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '+ DataprepToken
+    },
+  });
+  var jsonrecipe = JSON.parse(res_recipe.getBody());
+  var recipeName = jsonrecipe.name
+  console.log("Recipe Name : "+recipeName);
+
+  // ------------------ ADD ALL RESULTS TO A GOOGLE SHEET  --------------------------------
 
   // block on auth + getting the sheets API object
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets"]
   });
   const sheetsAPI = await google.sheets({ version: "v4", auth });
-  const JobSheetId = "1X63lT...........wm3SKx-Ro";
+  const JobSheetId = "1X63lT7...........VbwiDN0wm3SKx-Ro";
   
   sheetsAPI.spreadsheets.values.append({
-    key:"AIza........... qu8qlXUA",
+    key:"AIza............0qu8qlXUA",
     spreadsheetId: JobSheetId,
-    range: 'A1:E1',
+    range: 'A1:F1',
     valueInputOption: 'USER_ENTERED',
     insertDataOption: 'INSERT_ROWS',
     resource: {
       values: [
-        [new Date().toISOString().replace('T', ' ').substr(0, 19), jobID, jobStatus, jobURL,jobProfileFormula]
+        [new Date().toISOString().replace('T', ' ').substr(0, 19), jobID, recipeName, jobStatus, jobURL,jobProfileForumula]
       ],
     },
   }, (err, response) => {
