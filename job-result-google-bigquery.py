@@ -26,6 +26,7 @@ def publish_bigquery(request):
         url=dataprep_job_endpoint,
         headers=dataprep_headers
     )
+    
     job_object=resp.json()
     print('Status Code Get Job: {}'.format(resp.status_code))
     #print('Result : {}'.format(job_object))
@@ -47,12 +48,12 @@ def publish_bigquery(request):
     table_ref = dataset_ref.table('dataprep_jobs')
     table = bigquery_client.get_table(table_ref)  # API call
     row_to_insert = [{
-    "job_run_date":datetime_string,
-    "job_id":int(job_id),
-    "output_name":output_name,
-    "job_status":job_status,
-    "job_url":job_url,
-    "user":user
+        "job_run_date":datetime_string,
+        "job_id":int(job_id),
+        "output_name":output_name,
+        "job_status":job_status,
+        "job_url":job_url,
+        "user":user
     }]
     errors = bigquery_client.insert_rows(table, row_to_insert)  # API request
     assert errors == []
