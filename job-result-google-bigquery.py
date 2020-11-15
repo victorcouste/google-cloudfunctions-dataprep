@@ -36,10 +36,7 @@ def publish_bigquery(request):
     user = job_object["creator"]["email"]
     print('User : {}'.format(user))
 
-    now = datetime.now()
-    datetime_string = now.strftime("%Y-%m-%dT%H:%M:%S")
-
-    job_id_int=int(job_id)
+    datetime_string = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
     # Instantiates a client
     bigquery_client = bigquery.Client()
@@ -51,7 +48,7 @@ def publish_bigquery(request):
     table = bigquery_client.get_table(table_ref)  # API call
     row_to_insert = [{
     "job_run_date":datetime_string,
-    "job_id":job_id_int,
+    "job_id":int(job_id),
     "output_name":output_name,
     "job_status":job_status,
     "job_url":job_url,
