@@ -8,7 +8,7 @@ Google Cloud Functions examples for [Google Cloud Dataprep](https://cloud.google
 
 - **[job-result-google-sheet.js](https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/job-result-google-sheet.js)** : HTTP Node.js function to write in a Google Sheet a Dataprep job result info (id, status) with recipe name, link to the job page and link to PDF of result's profile. This HTTP Cloud function is called from a Dataprep Webhook when jobs are finished (success or failure). Next step coming is to publish in a Google Sheet the file published by Dataprep.
 
-- **[job-result-google-bigquery.js](https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/job-result-google-bigquery.py)** : HTTP Python function to write in a Google BigQuery table a Dataprep job result info (id, status) with dataset output name (recipe name), Google user and link to the job page. This HTTP Cloud function is called from a Dataprep Webhook when jobs are finished (success or failure).
+- **[job-result-google-bigquery.py](https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/job-result-google-bigquery.py)** : HTTP Python function to write in a Google BigQuery table a Dataprep job result info (id, status) with dataset output name (recipe name), Google user and link to the job page. This HTTP Cloud function is called from a Dataprep Webhook when jobs are finished (success or failure).
 
 - **[export_import_dataprep_flow.py](https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/export_import_dataprep_flow.py)** : Export a Dataprep flow from a project and import it in another project. Option to save or get the flow package (zip file) in a GCS bucket folder.
 
