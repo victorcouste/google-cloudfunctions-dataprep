@@ -36,11 +36,18 @@ def publish_bigquery(request):
     user = job_object["creator"]["email"]
     print('User : {}'.format(user))
     
-    dataflow_jobid = job_object["jobs"]["data"][0]["cpJobId"]
-    print('Dataflow jobId : {}'.format(dataflow_jobid))
+   createdAt = job_object["jobs"]["data"][0]["createdAt"]
 
-    createdAt = job_object["jobs"]["data"][0]["createdAt"]
-    updatedAt = job_object["jobs"]["data"][1]["updatedAt"]
+    if "cpJobId" in job_object["jobs"]["data"][0]:
+	    dataflow_jobid = job_object["jobs"]["data"][0]["cpJobId"]
+        updatedAt = job_object["jobs"]["data"][1]["updatedAt"]
+    else:
+        # there is an ingest or convert job before the dataflow transform job
+	    dataflow_jobid = job_object["jobs"]["data"][1]["cpJobId"]
+        updatedAt = job_object["jobs"]["data"][2]["updatedAt"]
+
+    print('Dataflow jobId : {}'.format(dataflow_jobid))
+    
     start_job = datetime.strptime(createdAt, "%Y-%m-%dT%H:%M:%S.000Z")
     end_job = datetime.strptime(updatedAt, "%Y-%m-%dT%H:%M:%S.000Z")
     job_duration = (end_job - start_job)
