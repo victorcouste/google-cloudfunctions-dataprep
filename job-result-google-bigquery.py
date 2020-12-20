@@ -38,15 +38,15 @@ def publish_bigquery(request):
     
    createdAt = job_object["jobs"]["data"][0]["createdAt"]
 
-    if "cpJobId" in job_object["jobs"]["data"][0]:
-	dataflow_jobid = job_object["jobs"]["data"][0]["cpJobId"]
-        updatedAt = job_object["jobs"]["data"][1]["updatedAt"]
-    else:
-        # there is an ingest or convert job before the dataflow transform job
-	dataflow_jobid = job_object["jobs"]["data"][1]["cpJobId"]
-        updatedAt = job_object["jobs"]["data"][2]["updatedAt"]
-
+   # Find "wrangle" job type, executed with Dataflow
+   for job in job_object["jobs"]["data"]:
+   	if job["jobType"]=="wrangle":
+		dataflow_jobid = job["cpJobId"]
+	
     print('Dataflow jobId : {}'.format(dataflow_jobid))
+    
+    # Datetime of last job
+    updatedAt=job["updatedAt"]
     
     start_job = datetime.strptime(createdAt, "%Y-%m-%dT%H:%M:%S.000Z")
     end_job = datetime.strptime(updatedAt, "%Y-%m-%dT%H:%M:%S.000Z")
