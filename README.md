@@ -1,4 +1,4 @@
-# google-cloudfunctions-dataprep
+# Google Cloud Functions for Cloud Dataprep
 
 ![image](CloudFunctions_Dataprep.png)
 
