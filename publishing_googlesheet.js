@@ -21,7 +21,7 @@ exports.publish_gsheet = async (req, res) => {
   });
   const sheetsAPI = google.sheets({version: 'v4',auth});
   
-  // ------------------ GET DATAPREP JOB AND CSV FILE NAME GENERATED  --------------------------------
+  // ------------------ GET DATAPREP JOB AND CSV FILE NAME GENERATED IN GCS --------------------------------
 
   const dataprep_job_endpoint = "https://api.clouddataprep.com/v4/jobGroups/"+DataprepJobID+"?embed=jobs.fileWriterJob.writeSetting";
 
@@ -70,7 +70,7 @@ exports.publish_gsheet = async (req, res) => {
 
   res.send(`Spreadsheet ${sheetName} created`);
 
-  // ------------------ READ CSV FILE CONTENT  --------------------------------
+  // ------------------ READ CSV FILE CONTENT FROM GCS --------------------------------
 
   function readCSVContent(mybucket,myfilepath) {
     return new Promise((resolve, reject) => {
@@ -95,7 +95,7 @@ exports.publish_gsheet = async (req, res) => {
     });
   }
 
-// ------------------ CREATE EMPTY SPREADSHEET  --------------------------------
+// ------------------ CREATE EMPTY NEW SHEET  --------------------------------
 
   function createEmptySheet(MySheetName,Myspreadsheetid) {
     return new Promise((resolve, reject) => {
@@ -132,7 +132,7 @@ exports.publish_gsheet = async (req, res) => {
     });
   }
 
-  // ------------------ WRITE DATA IN SHEET  --------------------------------
+  // ------------------ WRITE DATA IN THE NEW EMPTY SHEET  --------------------------------
 
   function populateAndStyle(FileData,MySheetId,MySpreadsheetId) {
     return new Promise((resolve, reject) => {
