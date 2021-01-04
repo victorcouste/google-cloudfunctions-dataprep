@@ -14,7 +14,7 @@
 
 - **[export_import_dataprep_flow.py](https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/export_import_dataprep_flow.py)** : Export a Dataprep flow from a project and import it in another project. Option to save or get the flow package (zip file) in a GCS bucket folder.
 
-- **[Update Google Cloud Data Catalog](https://github.com/victorcouste/google-data-catalog-dataprep)** : A Cloud Function to create or update Google Cloud Data Catalog tags on BigQuery tables with Cloud Dataprep Metadata and Column's Profile.
+- **[Update Google Cloud Data Catalog](https://victorcouste.github.io/google-data-catalog-dataprep/)** : A Cloud Function to create or update Google Cloud Data Catalog tags on BigQuery tables with Cloud Dataprep Metadata and Column's Profile.
 
 <br/><br/>
 
