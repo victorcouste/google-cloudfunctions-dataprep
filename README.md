@@ -2,7 +2,7 @@
 
 <img src="https://github.com/victorcouste/google-cloudfunctions-dataprep/raw/master/CloudFunctions_Dataprep.png" width="70%" height="70%">
 
-Google Cloud Functions examples for [Google Cloud Dataprep](https://cloud.google.com/dataprep)
+[Google Cloud Functions](https://cloud.google.com/functions) examples for [Cloud Dataprep](https://cloud.google.com/dataprep)
 
 - **[gcs_trigger_dataprep_job.py](https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/gcs_trigger_dataprep_job.py)** : Background Python function to trigger a Dataprep job when a file is created in a Google Cloud Storage bucket folder. Dataprep job started with REST API call and new file as parameter. Implementation details in the blog post [How to Automate a Cloud Dataprep Pipeline When a File Arrives](https://medium.com/google-cloud/how-to-automate-a-cloud-dataprep-pipeline-when-a-file-arrives-9b85f2745a09)
 
