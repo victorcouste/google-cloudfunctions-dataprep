@@ -1,6 +1,6 @@
 # Google Cloud Functions for Cloud Dataprep
 
-<img src="https://github.com/victorcouste/google-cloudfunctions-dataprep/blob/master/CloudFunctions_Dataprep.png" width="70%" height="70%">
+<img src="https://github.com/victorcouste/google-cloudfunctions-dataprep/raw/master/CloudFunctions_Dataprep.png" width="70%" height="70%">
 
 Google Cloud Functions examples for [Google Cloud Dataprep](https://cloud.google.com/dataprep)
 
