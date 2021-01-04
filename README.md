@@ -19,10 +19,10 @@ Google Cloud Functions examples for [Google Cloud Dataprep](https://cloud.google
 <br/><br/>
 
 
-Google Cloud Functions https://cloud.google.com/functions
+Google Cloud Functions [https://cloud.google.com/functions](https://cloud.google.com/functions)
 
-Google Cloud Dataprep by Trifacta https://cloud.google.com/dataprep
+Google Cloud Dataprep by Trifacta [https://cloud.google.com/dataprep](https://cloud.google.com/dataprep)
 
-Google Cloud Dataprep Standard API https://api.trifacta.com/dataprep-standard
+Google Cloud Dataprep Standard API [https://api.trifacta.com/dataprep-standard](https://api.trifacta.com/dataprep-standard)
 
-Google Cloud Dataprep Premium API https://api.trifacta.com/dataprep-premium
+Google Cloud Dataprep Premium API [https://api.trifacta.com/dataprep-premium](https://api.trifacta.com/dataprep-premium)
